@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(MyApp());
 
@@ -44,10 +45,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int login = 1;
+  int login;
 String email ="";
 String password="";
 
+saveNamePreference(int slogin) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setInt("slogin", slogin);
+}
+getNamePreference() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+int slogin = await prefs.getInt("slogin") ;
+if(slogin==null){
+  slogin=0;
+}
+setState(() {
+  login=slogin;
+});
+
+}
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +73,8 @@ String password="";
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+  getNamePreference();
+  print(login);
     if(login==1){
     return Container(
       decoration: BoxDecoration(
@@ -76,10 +94,12 @@ actions: <Widget>[
 
   Column(
       children: <Widget>[
-        FlatButton.icon(icon: Icon(Icons.person), onPressed: (){
-          setState(() {
-            login=0;
-          });
+        FlatButton.icon(icon: Icon(Icons.person), onPressed: () async{
+          saveNamePreference(0);
+
+//          setState(() {
+//            login=1;
+//          });
         },label: Text("Logout"),),
       ],
   )
@@ -96,7 +116,7 @@ actions: <Widget>[
           ),
           child: Container(
             child: Card(
-              color: Colors.brown,
+              color: Colors.yellow[50],
               margin: EdgeInsets.all(20.0),
 shape: RoundedRectangleBorder(
   borderRadius: BorderRadius.circular(10.0),
@@ -243,15 +263,19 @@ shape: RoundedRectangleBorder(
                               ),
 
                               onPressed: ()  {
-                              if(email == "a" && password == "a"){
-                                setState(() {
-                                  login = 1;
-                                });
+//                                if(email == "" && password == ""){
+
+                              if(email == "abdeshmukh@gmail.com" && password == "abdeshmukh"){
+                                saveNamePreference(1);
+//                                setState(() {
+//                                  login = 1;
+//                                });
                               }
                               else{
-                                setState(() {
-                                  login = 0;
-                                });
+                                saveNamePreference(0);
+//                                setState(() {
+//                                  login = 0;
+//                                });
                               }
                             },
                               child: Center(
