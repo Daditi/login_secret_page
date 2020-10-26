@@ -15,5 +15,11 @@ the app is opened even after clearing the app from recent apps it should go to t
 The secret page should have a logout button which when pressed logs the person out, from now
 on every time the person opens the app login screen should open.
 Hint : Think of it as a login module without the backend. You are free to use any way to maintain
-the data locally."
-The above functionality has been implemented successfully.
+the data locally."<br>
+The above functionality has been implemented successfully.<br>
+
+## Login
+![](assets/ui-login.jpeg)
+
+# Home Page 
+![](assets/ui-home.jpeg)
