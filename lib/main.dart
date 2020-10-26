@@ -46,7 +46,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int login;
+  int login;      //changes based on the data stored locally on disc file
 String email ="";
 String password="";
 
