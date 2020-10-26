@@ -263,9 +263,9 @@ shape: RoundedRectangleBorder(
                               ),
 
                               onPressed: ()  {
-                                if(email == "" && password == ""){
+//                                if(email == "" && password == ""){
 
-//                              if(email == "abdeshmukh@gmail.com" && password == "abdeshmukh"){
+                              if(email == "abdeshmukh@gmail.com" && password == "abdeshmukh"){
                                 saveNamePreference(1);
 //                                setState(() {
 //                                  login = 1;
