@@ -19,4 +19,7 @@ the data locally."<br>
 The above functionality has been implemented successfully.<br>
 
 ## Login
-![]
+![](assets/ui-login.jpeg)
+
+# Home Page 
+![](assets/ui-home.jpeg)
