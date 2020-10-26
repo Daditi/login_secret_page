@@ -145,10 +145,19 @@ shape: RoundedRectangleBorder(
                         )
                       ),
                       SizedBox(height: 20,),
-                      Text("I hope you liked my assignment. Looking forward to work with your company as an intern. I will do my best and give you the best results.",
+                      Text("I hope you liked my assignment.",
                       style: TextStyle(
                         fontSize: 20
                       )),
+                      Text("App Description:",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20
+                          )),
+                      Text("When a person logs in to the system using any assumed credentials from your end, every time the app is opened even after clearing the app from recent apps it should go to the secret page.The secret page should have a logout button which when pressed logs the person out, from nowon every time the person opens the app login screen should open.",
+                          style: TextStyle(
+                              fontSize: 20
+                          )),
 
                     ],
                   ),
